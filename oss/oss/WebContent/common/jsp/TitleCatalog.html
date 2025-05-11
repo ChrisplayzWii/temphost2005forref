@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+<%@ page language="java" contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+-->
+
+<c:set var="txtPath" value="../txt" />
+
+<c:set var="htmlPath" value="/${locale}/html" />
+<c:set var="jsPath" value="/${locale}/js" />
+<c:set var="cssPath" value="/${locale}/css" />
+<c:set var="imagesPath" value="/${locale}/images" />
+<c:set var="titlesPath" value="/${locale}/titles" />
+
+<SCRIPT language="JavaScript" src="../js/ec.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/ec_example.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/vc.js"></SCRIPT>
+<!--<fmt:setLocale value="${locale}" scope="request"/>-->
+
+
+  	<!-- not yet changed to html.. -->
+<!-- progress 80% -->
+
+<!-- Links -->
+<c:url var="listAllUrl" value="ListTitles.html">
+	<fmt:message var="heading" key="All Titles" />
+	<c:param name="p" value="1"/>
+	<c:param name="heading" value="${heading}"/>
+	<c:param name="license" value="PERMANENT" />
+	<c:param name="license" value="RENTAL" />
+</c:url>	
+
+<c:url var="listNewUrl" value="ListTitles.html">
+	<fmt:message var="heading" key="New Titles" />
+	<c:param name="p" value="1"/>
+	<c:param name="new" value="true"/>
+	<c:param name="heading" value="${heading}"/>
+	<c:param name="license" value="PERMANENT" />
+	<c:param name="license" value="RENTAL" />
+</c:url>	
+
+<c:url var="titleSearchUrl" value="SearchTitle.html">
+</c:url>
+
+<c:url var="platformSearchUrl" value="ListFilters.html">
+	<c:param name="filter" value="platform"/>
+</c:url>
+
+<c:url var="publisherSearchUrl" value="ListFilters.html">
+	<c:param name="filter" value="publisher"/>
+</c:url>
+
+<c:url var="genreSearchUrl" value="ListFilters.html">
+	<c:param name="filter" value="genre"/>
+</c:url>
+
+<!-- Main page -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  <META http-equiv="Cache-Control" content="no-cache">
+  <META http-equiv="Pragma" content="no-cache">
+
+    <link rel=stylesheet type="text/css" href="../css/oss.css">
+  <title>Virtual Console Catalog</title>
+</head>
+
+<body>
+<center>
+<TABLE WIDTH=100%>
+<TR>
+	<TD ALIGN="left">
+		<button class="tdButton" onclick="showHome()">Home</button>
+	</TD>
+	<TD ALIGN="right">
+		<button class="tdButton" onclick="showHelp('GameCatalog')">Help</button>
+	</TD>		
+</TR>
+</TABLE>
+<H1>Virtual Console Catalog</H1>
+<table>
+<tr>
+<td align="left">
+<UL>
+<LI><A HREF="ListTitles.html">All Titles</A></LI>
+<LI><A HREF="ListTitles.html">New Titles</A></LI>
+<LI><A HREF="SearchTitle.html">Virtual Console CatalogSearch</A></LI>
+<LI><A HREF="ListFilters.html">Search by Platform</A></LI>
+<LI><A HREF="ListFilters.html">Search by Genre</A></LI>
+<LI><A HREF="ListFilters.html">Search by Publisher</A></LI>
+</UL>
+</td>
+</tr>
+</table>
+
+<br><br>
+<button class="tdbutton" onclick="showBack()">Back</button>
+</center>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+<%@ page language="java" contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+-->
+
+<c:set var="txtPath" value="../txt" />
+
+<c:set var="htmlPath" value="/${locale}/html" />
+<c:set var="jsPath" value="/${locale}/js" />
+<c:set var="cssPath" value="/${locale}/css" />
+<c:set var="imagesPath" value="/${locale}/images" />
+<c:set var="titlesPath" value="/${locale}/titles" />
+
+<SCRIPT language="JavaScript" src="../js/ec.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/ec_example.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/vc.js"></SCRIPT>
+<!--<fmt:setLocale value="${locale}" scope="request"/>-->
+
+
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  <META http-equiv="Cache-Control" content="no-cache">
+  <META http-equiv="Pragma" content="no-cache">
+
+    <link rel=stylesheet type="text/css" href="../css/oss.css">
+  <title>Virtual Console</title>
+<style type="text/css">
+<!--
+body {
+	background-image: url(../../en_US/images/BG_SAMPLE.gif);
+	background-repeat: no-repeat;
+}
+#Layer1 {
+	position:absolute;
+	left:0px;
+	top:93px;
+	width:224px;
+	height:58px;
+	z-index:1;
+}
+#Layer2 {
+	position:absolute;
+	left:0px;
+	top:156px;
+	width:224px;
+	height:58px;
+	z-index:2;
+}
+#Layer3 {
+	position:absolute;
+	left:0px;
+	top:219px;
+	width:224px;
+	height:58px;
+	z-index:3;
+}
+#Layer4 {
+	position:absolute;
+	left:0px;
+	top:282px;
+	width:224px;
+	height:58px;
+	z-index:4;
+}
+#Layer5 {
+	position:absolute;
+	left:0px;
+	top:345px;
+	width:224px;
+	height:58px;
+	z-index:5;
+}
+#Layer6 {
+	position:absolute;
+	left:225px;
+	top:98px;
+	width:383px;
+	height:286px;
+	z-index:6;
+}
+#Layer7 {
+	position:absolute;
+	left:316px;
+	top:385px;
+	width:147px;
+	height:49px;
+	z-index:7;
+}
+#Layer8 {
+	position:absolute;
+	left:252px;
+	top:141px;
+	width:322px;
+	height:215px;
+	z-index:8;
+}
+.style4 {font-size: 12px}
+#Layer9 {
+	position:absolute;
+	left:262px;
+	top:151px;
+	width:303px;
+	height:197px;
+	z-index:9;
+}
+#Layer10 {
+	position:absolute;
+	left:262px;
+	top:181px;
+	width:22px;
+	height:22px;
+	z-index:10;
+}
+#Layer11 {
+	position:absolute;
+	left:262px;
+	top:211px;
+	width:22px;
+	height:22px;
+	z-index:11;
+}
+#Layer12 {
+	position:absolute;
+	left:262px;
+	top:241px;
+	width:22px;
+	height:22px;
+	z-index:12;
+}
+</style>
+<script type="text/JavaScript">
+function initPage()
+{
+	vcInitPage();
+	ec.refreshCachedBalance();
+}
+</script>
+</head>
+
+<body onload="initPage()">
+<div id="Layer1"><a href="TitleCatalog.html" target="_parent"><img src="../../en_US/images/DOWN.gif" alt="Download" width="224" height="58" border="0" /></a></div>
+<div id="Layer2"><a href="AddPoints.html" target="_parent"><img src="../../en_US/images/ADD_POINTS.gif" alt="Add Points" width="224" height="58" border="0" /></a></div>
+<div id="Layer3"><a href="ListTransactions.html" target="_parent"><img src="../../en_US/images/HISTORY.gif" alt="Purchase History" width="224" height="58" border="0" /></a></div>
+<div id="Layer4"><a href="UseSettings.html" target="_parent"><img src="../../en_US/images/SET.gif" alt="Settings" width="224" height="58" border="0" /></a></div>
+<div id="Layer5"><img onclick="showHelp('Home')" src="../../en_US/images/HELP.gif" alt="Help" width="224" height="58" border="0" /></a></div>
+<div id="Layer6"><img src="../../en_US/images/INFO.gif" width="383" height="286" /></div>
+<div id="Layer7"><img onclick="exit()" src="../../en_US/images/EXIT.gif" width="147" height="49" border="0" /></a></div>
+<div id="Layer9">
+  <p><a href="Message.html"><img src="../../en_US/images/INFO_ICON.gif" width="22" height="22" border="0" /> Information No.001</a></p>
+  <p><a href="Message.html"><img src="../../en_US/images/INFO_ICON.gif" width="22" height="22" border="0" /> Information No.002 </a></p>
+</div>
+
+</body>
+</html>

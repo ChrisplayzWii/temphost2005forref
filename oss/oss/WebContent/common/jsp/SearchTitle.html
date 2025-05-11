@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+<%@ page language="java" contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+-->
+
+<c:set var="txtPath" value="../txt" />
+
+<c:set var="htmlPath" value="/${locale}/html" />
+<c:set var="jsPath" value="/${locale}/js" />
+<c:set var="cssPath" value="/${locale}/css" />
+<c:set var="imagesPath" value="/${locale}/images" />
+<c:set var="titlesPath" value="/${locale}/titles" />
+
+<SCRIPT language="JavaScript" src="../js/ec.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/ec_example.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/vc.js"></SCRIPT>
+<!--<fmt:setLocale value="${locale}" scope="request"/>-->
+
+
+
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  <META http-equiv="Cache-Control" content="no-cache">
+  <META http-equiv="Pragma" content="no-cache">
+
+    <link rel=stylesheet type="text/css" href="../css/oss.css">
+  <title>Searching for Titles</title>
+</head>
+
+<body>
+
+<CENTER>
+<TABLE WIDTH=100%>
+<TR>
+	<TD ALIGN="left">
+		<button class="tdButton" onclick="showHome()">Home</button>
+	</TD>
+	<TD ALIGN="right">
+		<button class="tdButton" onclick="showHelp('SearchTitle')">Help</button>
+	</TD>		
+</TR>
+</TABLE>
+
+<TABLE>
+<TR>
+<TD></TD>
+<TD>Please enter a title</TD>
+<TR>
+<TD>Title</TD>
+<TD>
+	<form action="ListTitles.html" method="post">
+	<fmt:message var="heading" key="Search Results"/>
+	<input type="hidden" name="heading" value="<c:out value="${heading}"/>" />
+	<input type="hidden" name="p" value="1"/>
+	<input type="text" name="title"/>
+	<input type="submit" name="Search" value="Search"/>
+	</form>	
+</TD>	
+</TR>
+</TABLE>
+
+<BR><BR>
+<button class="tdbutton" onclick="showBack()">Back</button>
+
+</CENTER>
+
+</body>
+</html>

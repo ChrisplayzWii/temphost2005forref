@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<SCRIPT language="JavaScript" src="../js/ec.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/ec_example.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/vc.js"></SCRIPT>
+
+<!-- Links -->
+
+<c:url var="buyWithCreditCardUrl" value="BuyPoints.html">
+	<c:param name="pay" value="CCARD"/>
+</c:url>	
+
+<c:url var="buyWithPrepaidCardUrl" value="PrepaidCardInput.html">
+	<c:param name="next" value="BuyPointsResult.html"/>
+</c:url>	
+
+
+<!-- Main page -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  <META http-equiv="Cache-Control" content="no-cache">
+  <META http-equiv="Pragma" content="no-cache">
+
+  <link rel=stylesheet type="text/css" href="../css/oss.css">
+	<!--  this file https://github.com/ChrisplayzWii/2005-earlywiishop-archive/blob/main/oss/oss/resources/Attic/messages.properties 
+		helped me out to fill out the message key elements -->
+  <title>Add Points</title>
+</head>
+
+<body>
+<CENTER>
+<TABLE WIDTH=100%>
+<TR>
+	<TD ALIGN="left">
+		<button class="tdButton" onclick="showHome()">Home</button>
+	</TD>
+	<TD ALIGN="right">
+		<button class="tdButton" onclick="showHelp('AddPoints')">Help</button>
+	</TD>		
+</TR>
+</TABLE>
+
+<H1>Add Points</H1>
+<UL>
+<A HREF="BuyPoints.html">Buy points with a Credit Card</A>
+</UL>
+<UL>
+<A HREF="BuyPointsResult.html">Buy points with a Prepaid Card</A>
+</UL>
+
+<button class="tdbutton" onclick="showBack()">Back</button>
+
+</CENTER>
+
+</body>
+</html>

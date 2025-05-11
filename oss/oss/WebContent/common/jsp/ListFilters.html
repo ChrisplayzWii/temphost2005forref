@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+<%@ page language="java" contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+-->
+
+<c:set var="txtPath" value="../txt" />
+
+<c:set var="htmlPath" value="/${locale}/html" />
+<c:set var="jsPath" value="/${locale}/js" />
+<c:set var="cssPath" value="/${locale}/css" />
+<c:set var="imagesPath" value="/${locale}/images" />
+<c:set var="titlesPath" value="/${locale}/titles" />
+
+<SCRIPT language="JavaScript" src="../js/ec.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/ec_example.js"></SCRIPT>
+<SCRIPT language="JavaScript" src="../js/vc.js"></SCRIPT>
+<!--<fmt:setLocale value="${locale}" scope="request"/>-->
+
+
+
+
+<jsp:useBean id="choices" class="com.broadon.cas.FilterBean" scope="request">
+</jsp:useBean>
+
+<fmt:message key="all.${param.filter}" var="filterName"/>
+
+<html>
+<head>
+	<!-- not yet changed to html.. -->
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  <META http-equiv="Cache-Control" content="no-cache">
+  <META http-equiv="Pragma" content="no-cache">
+
+    <link rel=stylesheet type="text/css" href="../css/oss.css">
+  <title>
+  	Search by {0}
+  		<fmt:param value="${filterName}" />
+	</fmt:message>
+  </title>
+</head>
+
+<body>
+
+<CENTER>
+
+<TABLE WIDTH=100%>
+<TR>
+	<TD ALIGN="left">
+		<button class="tdButton" onclick="showHome()">Home</button>
+	</TD>
+	<TD ALIGN="right">
+		<button class="tdButton" onclick="showHelp('SearchTitle')">Help</button>
+	</TD>		
+</TR>
+</TABLE>
+
+<fmt:message key="Select a {0}">
+	<fmt:param value="${filterName}" />
+</fmt:message>
+<TABLE>
+	<c:forEach var="choice" items="${choices.filterList}">
+		<c:if test="${not empty choice}">
+        <TR>
+        	<TD>        	
+         		<fmt:message key="${choice}" var="choiceName"/>
+				<fmt:message var="heading" key="Titles for {0}: {1} ">
+					<fmt:param value="${filterName}"/>
+					<fmt:param value="${choiceName}"/>
+				</fmt:message>	
+        		<c:url var="listUrl" value="ListTitles.html">
+					<c:param name="p" value="1"/>
+					<c:param name="${param.filter}" value="${choice}" />
+					<c:param name="heading" value="${heading}" />
+					<c:param name="license" value="PERMANENT" />
+					<c:param name="license" value="RENTAL" />
+				</c:url>
+
+        		<a href="ListTitles.html" />
+        			<c:out value="${choiceName}" />
+        		</a>
+        	</TD>
+        </TR>
+        </c:if>
+	</c:forEach>
+</TABLE>
+
+<BR><BR>
+<button class="tdbutton" onclick="showBack()" id="ReturnButton">Back</button>
+
+</CENTER>
+
+</body>
+</html>
